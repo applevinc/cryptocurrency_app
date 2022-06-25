@@ -47,7 +47,7 @@ class ChartTile extends StatelessWidget {
                       ),
                       Positioned(
                         top: -3.h,
-                        right: -35.w,
+                        right: -40.w,
                         child: Text(
                           '$percent%',
                           style: Theme.of(context).textTheme.titleSmall!.copyWith(
@@ -87,6 +87,7 @@ class ChartTile extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w600,
                         color: AppColors.dark,
+                        fontSize: 16.sp,
                       ),
                 ),
               ),

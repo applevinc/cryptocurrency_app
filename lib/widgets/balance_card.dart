@@ -40,31 +40,40 @@ class BalanceCard extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '$currency $balance',
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                          fontSize: 26.sp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                  SvgPicture.asset(
+                    AppIcons.btcBorder,
+                    height: 30.h,
+                    width: 30.w,
+                  ),
+                ],
+              ),
+              SizedBox(height: 2.h),
               Text(
-                '$currency $balance',
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      fontSize: 26.sp,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
+                'Your balance is equivalent',
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      fontSize: 14.sp,
+                      color: Colors.white.withOpacity(.7),
+                      fontWeight: FontWeight.w300,
                     ),
               ),
-              SvgPicture.asset(AppIcons.btcBorder),
             ],
           ),
-          SizedBox(height: 2.h),
-          Text(
-            'Your balance is equivalent',
-            style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                  fontSize: 14.sp,
-                  color: Colors.white.withOpacity(.7),
-                  fontWeight: FontWeight.w300,
-                ),
-          ),
-          SizedBox(height: 65.h),
           Row(
             children: [
               const ActionButton(label: 'Deposit'),

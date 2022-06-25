@@ -28,7 +28,11 @@ class CustomAppBar extends StatelessWidget {
                   fontSize: 26.sp,
                 ),
           ),
-          SvgPicture.asset(AppIcons.settings),
+          SvgPicture.asset(
+            AppIcons.settings,
+            height: 30.h,
+            width: 30.w,
+          ),
         ],
       ),
     );

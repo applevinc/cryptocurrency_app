@@ -78,14 +78,14 @@ class _BalanceCardSectionState extends State<_BalanceCardSection> {
 
   Widget _tallerCard() {
     return SizedBox(
-      height: 260.h,
+      height: 330.h,
       child: _buildListView(),
     );
   }
 
   Widget _smallerCard() {
     return SizedBox(
-      height: 232.h,
+      height: 230.h,
       child: _buildListView(),
     );
   }

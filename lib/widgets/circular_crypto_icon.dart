@@ -22,7 +22,11 @@ class CryptoIcon extends StatelessWidget {
         color: color.withOpacity(.1),
         shape: BoxShape.circle,
       ),
-      child: SvgPicture.asset(icon),
+      child: SvgPicture.asset(
+        icon,
+        height: 25.h,
+        width: 25.w,
+      ),
     );
   }
 }
