@@ -17,6 +17,7 @@ class BalanceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final balance = HelperFunctions.currencyFormmatter(wallet.balance);
     final currency = wallet.currency;
+    final color = wallet.shadowColor;
 
     return Container(
       width: 305.w,
@@ -31,9 +32,9 @@ class BalanceCard extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xff336AF2).withOpacity(.15),
-            offset: Offset(0, 15.h),
-            blurRadius: 35.r,
+            color: color.withOpacity(.15),
+            offset: Offset(0, 13.h),
+            blurRadius: 25,
             spreadRadius: 0,
           ),
         ],

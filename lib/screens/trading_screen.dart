@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-class TrendingScreen extends StatelessWidget {
-  const TrendingScreen({Key? key}) : super(key: key);
+class TradingScreen extends StatelessWidget {
+  const TradingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class TrendingScreen extends StatelessWidget {
       child: Scaffold(
         body: SafeArea(
           child: CustomScrollView(
-            physics: const BouncingScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             slivers: [
               const SliverToBoxAdapter(child: CustomAppBar(title: 'Trading')),
               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
@@ -130,6 +130,7 @@ class BaseTabView extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.w600,
                           color: AppColors.dark,
+                          fontSize: 17.sp,
                         ),
                   ),
                 ),

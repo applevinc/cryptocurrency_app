@@ -2,7 +2,7 @@ import 'package:cryptocurrency_app/core/assets/icons.dart';
 import 'package:cryptocurrency_app/core/styles/colors.dart';
 import 'package:cryptocurrency_app/screens/home_screen.dart';
 import 'package:cryptocurrency_app/screens/profile_screen.dart';
-import 'package:cryptocurrency_app/screens/trending_screen.dart';
+import 'package:cryptocurrency_app/screens/trading_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -17,7 +17,7 @@ class _DashBoardViewState extends State<DashBoardView> {
   int _selectedIndex = 0;
   static const List<Widget> _screens = <Widget>[
     HomeScreen(),
-    TrendingScreen(),
+    TradingScreen(),
     ProfileScreen(),
   ];
 

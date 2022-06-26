@@ -51,6 +51,7 @@ class _BalanceCardSectionState extends State<_BalanceCardSection> {
         const Color(0xffB066FE),
         const Color(0xff63E2FF),
       ],
+      shadowColor: const Color(0xff336AF2),
       currency: '€',
     ),
     Wallet(
@@ -59,6 +60,7 @@ class _BalanceCardSectionState extends State<_BalanceCardSection> {
         const Color(0xffD74177),
         const Color(0xffFFE98A),
       ],
+      shadowColor: const Color(0xffFF6551),
       currency: '\$',
     ),
   ];
@@ -85,15 +87,16 @@ class _BalanceCardSectionState extends State<_BalanceCardSection> {
 
   Widget _smallerCard() {
     return SizedBox(
-      height: 230.h,
+      height: 250.h,
       child: _buildListView(),
     );
   }
 
-  ListView _buildListView() {
+  Widget _buildListView() {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: wallets.length,
+      padding: EdgeInsets.only(right: 24.w),
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
         final wallet = wallets[index];
@@ -170,39 +173,42 @@ class _ChartsSectionState extends State<_ChartsSection> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Column(children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Charts',
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    fontSize: 14.sp,
-                    color: AppColors.gray,
-                  ),
-            ),
-            Text(
-              'See All',
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    fontSize: 14.sp,
-                    color: AppColors.red,
-                  ),
-            ),
-          ],
-        ),
-        ListView.separated(
-          shrinkWrap: true,
-          itemCount: charts.length,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            final crypto = charts[index];
-            return ChartTile(crypto);
-          },
-          separatorBuilder: (context, index) {
-            return const CustomDivider();
-          },
-        ),
-      ]),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Charts',
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      fontSize: 14.sp,
+                      color: AppColors.gray,
+                    ),
+              ),
+              Text(
+                'See All',
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      fontSize: 14.sp,
+                      color: AppColors.red,
+                    ),
+              ),
+            ],
+          ),
+          SizedBox(height: 20.h),
+          ListView.separated(
+            shrinkWrap: true,
+            itemCount: charts.length,
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              final crypto = charts[index];
+              return ChartTile(crypto);
+            },
+            separatorBuilder: (context, index) {
+              return const CustomDivider();
+            },
+          ),
+        ],
+      ),
     );
   }
 }
