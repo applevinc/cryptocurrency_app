@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       create: (_) => TradePercentController(),
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
+        minTextAdapt: true,
         builder: (BuildContext context, Widget? child) {
           return MaterialApp(
             title: 'Cryptocurrency App Ui',
